@@ -6,8 +6,9 @@ public class Empleado {
 	private String apellido;
 	private String categoria;
 	private int edad;
-	private boolean clubSocial; //Indica si el empleado está en el club social de la empresa
+	private boolean clubSocial; // Indica si el empleado está en el club social de la empresa
 	private float sueldo;
+
 	/**
 	 * @param dni
 	 * @param nombre
@@ -17,6 +18,7 @@ public class Empleado {
 	 * @param clubSocial
 	 * @param sueldo
 	 */
+
 	public Empleado(String dni, String nombre, String apellido, String categoria, int edad, boolean clubSocial,
 			float sueldo) {
 		super();
@@ -41,12 +43,13 @@ public class Empleado {
 		this.sueldo = (float) 0.0;
 	}
 
-	// Constructor  
+	// Constructor
 	/**
 	 * @param dni
 	 * @param nombre
 	 * @param apellido
 	 */
+
 	public Empleado(String dni, String nombre, String apellido) {
 		super();
 		this.dni = dni;
@@ -57,6 +60,8 @@ public class Empleado {
 		this.clubSocial = false;
 		this.sueldo = (float) 0.0;
 	}
+
+	
 
 	/**
 	 * GETers and SETers
@@ -135,10 +140,13 @@ public class Empleado {
 		return clubSocial;
 	}
 
-	/**
-	 * @param clubSocial the clubSocial to set
-	 */
+	// Comentamos el metodo setClubSocial
+
 	public void setClubSocial(boolean clubSocial) {
+		this.clubSocial = sueldo > 2000;
+	}
+	
+	public void setClubSocial() {
 		this.clubSocial = clubSocial;
 	}
 
@@ -154,16 +162,14 @@ public class Empleado {
 	 */
 	public void setSueldo(float sueldo) {
 		this.sueldo = sueldo;
+	}	
+	
+	// toString
+	
+	@Override
+	public String toString() {
+		return "Empleado [dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido + ", categoria=" + categoria
+				+ ", edad=" + edad + ", clubSocial=" + clubSocial + ", sueldo=" + sueldo + "]";
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 }
